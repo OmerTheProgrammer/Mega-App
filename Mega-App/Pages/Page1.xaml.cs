@@ -29,7 +29,17 @@ namespace MegaApp.Pages
 
         private void Banner_Loaded(object sender, RoutedEventArgs e)
         {
-            LoadView(new HeroBanner());
+            // 1. Get a reference to your MainWindow
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+
+            if (mainWindow != null)
+            {
+                // 2. Create the banner and pass the method NAME (without parentheses)
+                // This works because OpenNotImpWin matches the RoutedEventHandler signature
+                var banner = new HeroBanner(mainWindow.OpenNotImpWin, mainWindow.OpenNotImpWin);
+
+                LoadView(banner);
+            }
         }
 
         private void LoadView(UserControl uc)
