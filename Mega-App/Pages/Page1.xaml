@@ -11,6 +11,7 @@
 
     <Grid>
         <StackPanel x:Name="sp">
+            <TextBlock Height="60"></TextBlock>
             <ContentControl x:Name="MainContent"
                         Grid.Row="1"
                         Grid.Column="1"
